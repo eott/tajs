@@ -1,5 +1,6 @@
 {
     "scenes": [
         "test_scene"
-    ]
+    ],
+    "start_scene": "test_scene"
 }

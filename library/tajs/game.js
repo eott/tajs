@@ -16,7 +16,10 @@ TajsGame.prototype.setConfig = function(config) {
         $.getJSON(
             "assets/scenes/" + name + ".json",
             function(json) {
-                this.scenes[name] = new Scene(s);
+                this.scenes[name] = new Scene(json);
+                if (this.config["start_scene"] == name) {
+                    this.setActiveScene(this.scenes[name])
+                }
             }.bind(this)
         );
     }
