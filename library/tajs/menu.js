@@ -10,4 +10,13 @@ $(document).ready(function() {
                 .attr('src', 'assets/images/icons/unmute.png');
         }
     });
+
+    $('.expand').on('click', function (e) {
+        var $elements = $('.creditAttributions');
+        if ($elements.hasClass('visible')) {
+            $elements.removeClass('visible');
+        } else {
+            $elements.addClass('visible');
+        }
+    });
 });
