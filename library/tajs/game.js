@@ -1,10 +1,12 @@
 var TajsGame = function() {
     this.activeScene = false;
     this.config = {};
+    this.menu = new Menu();
 };
 
 TajsGame.prototype.setActiveScene = function(scene) {
     this.activeScene = scene;
+    this.menu.loadScene(scene);
 };
 
 TajsGame.prototype.setConfig = function(config) {
@@ -18,7 +20,7 @@ TajsGame.prototype.setConfig = function(config) {
             function(json) {
                 this.scenes[name] = new Scene(json);
                 if (this.config["start_scene"] == name) {
-                    this.setActiveScene(this.scenes[name])
+                    this.setActiveScene(this.scenes[name]);
                 }
             }.bind(this)
         );

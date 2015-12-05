@@ -1,3 +1,12 @@
+var Menu = function() {
+
+};
+
+Menu.prototype.loadScene = function (scene) {
+    $('#gameView').data('scene_name', scene.name);
+    $('#sceneDescription').html(scene.description);
+};
+
 $(document).ready(function() {
     $('#mute').on('click', function (e) {
         if ($(this).hasClass('unmute')) {

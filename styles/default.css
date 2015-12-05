@@ -34,9 +34,15 @@ body {
     min-height: 300px;
     border: 1px solid #000;
     margin: 2em auto;
+    padding: 5px;
     box-shadow: 4px 4px 5px 3px #E0D4C1;
     border-radius: 10px;
     background: #FFEFC2;
+}
+
+#sceneDescription {
+    overflow-y: scroll;
+    min-height: 300px;
 }
 
 .credits {
