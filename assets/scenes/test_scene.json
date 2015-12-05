@@ -1,5 +1,6 @@
 {
     "name": "Test Scene",
-    "image": "",
-    "description": "A test scene stretches before you. You can see unlimited potential but nothing concrete. Everything has all the colors and none at once. All the shapes and yet shapeless. You decide to not do drugs anymore."
+    "image": "assets/images/scene/town.jpg",
+    "alt_text": "The view on a city from a tall building",
+    "description": "A test scene stretches before you. You can see unlimited potential but nothing concrete. Everything has all the colors and none at once. All the shapes and yet shapeless. You decide not to do drugs anymore.<br><br>After you come to your senses, you realize you are on top of a church tower, overlooking your home city. You have no memory how you got here, but the blood-stained sweater you're wearing might offer first clue as to the last hour's happenings. You are now slightly worried."
 }

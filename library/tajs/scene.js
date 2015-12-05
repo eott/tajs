@@ -1,5 +1,14 @@
 var Scene = function(data) {
-    this.name = data.name;
-    this.image = data.image;
-    this.description = data.description;
+    var getDefault = function(name) {
+        if (data[name] != undefined) {
+            return data[name];
+        } else {
+            return "";
+        }
+    };
+
+    this.name = getDefault("name");
+    this.image = getDefault("image");
+    this.description = getDefault("description");
+    this.altText = getDefault("alt_text");
 };

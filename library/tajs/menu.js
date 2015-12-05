@@ -4,7 +4,16 @@ var Menu = function() {
 
 Menu.prototype.loadScene = function (scene) {
     $('#gameView').data('scene_name', scene.name);
-    $('#sceneDescription').html(scene.description);
+
+    var html = "";
+    if (scene.image != "") {
+        html += '<img class="sceneImage" src="'
+            + scene.image + '" alt="'
+            + scene.altText + '"/>';
+    }
+
+    html += scene.description;
+    $('#sceneDescription').html(html);
 };
 
 $(document).ready(function() {

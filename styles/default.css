@@ -41,8 +41,21 @@ body {
 }
 
 #sceneDescription {
-    overflow-y: scroll;
     min-height: 300px;
+}
+
+.sceneImage {
+    float: right;
+    width: 100px;
+    max-width: 790px;
+    border: 5px solid #000;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 0 5px 10px;
+}
+
+.sceneImage:hover {
+    width: auto;
 }
 
 .credits {
