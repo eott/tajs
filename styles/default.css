@@ -47,7 +47,7 @@ body {
 .sceneImage {
     float: right;
     width: 100px;
-    max-width: 790px;
+    max-width: calc(100% - 10px);
     border: 5px solid #000;
     cursor: pointer;
     border-radius: 10px;

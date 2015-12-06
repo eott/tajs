@@ -1,0 +1,14 @@
+{
+    "name": "Test Scene Stay",
+    "description": "You enjoy the quiet of an early saturday (sunday?) noon and observe the people going about their business. Down on the plaza there's a group of youths drinking, a street performer, several old ladies, a weary looking man pacing along a bench, no less than seven people in coats hurrying across, holding their phones against their ears and of course one of the local excorcists.<br><br>After half an hour or so, a group of enforcers enter the plaza. One of them soon looks up and points at you. Uh oh, this doesn't look good.",
+    "options": [
+        {
+            "text": "Climb inside and use the stairs",
+            "proceed": "test_scene/test_scene_stairs_late"
+        },
+        {
+            "text": "Remain on the roof",
+            "proceed": "test_scene/test_scene_drone_roof"
+        }
+    ]
+}

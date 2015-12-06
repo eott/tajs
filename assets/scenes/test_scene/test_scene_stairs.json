@@ -1,0 +1,14 @@
+{
+    "name": "Test Scene Stairs",
+    "description": "You manage to climb inside with some difficulty and descend the tower. As you go, you see the occasional fresh blood stain on the walls and floor. You still don't know what happened, but how bad can it really be? You reach the bottom of the tower and see two doors:",
+    "options": [
+        {
+            "text": "Use the door with blood seeping out beneath it",
+            "proceed": "test_scene/test_scene_demon"
+        },
+        {
+            "text": "Use the door to the plaze",
+            "proceed": "test_scene/test_scene_escape"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Intro",
+    "description": "This is a tiny demonstration game, illustrating the capabilities of the tajs framework. As the framework is expanded, new features may appear in this game. It also serves developers as an example how to structure a game with tajs.<br><br>When you are ready to start the game, simply click (or tap!) the option below.",
+    "options": [
+        {
+            "text": "Start demo",
+            "proceed": "test_scene/test_scene"
+        }
+    ]
+}
