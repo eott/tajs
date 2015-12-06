@@ -9,6 +9,16 @@ TajsGame.prototype.setActiveScene = function(scene) {
     this.menu.loadScene(scene);
 };
 
+TajsGame.prototype.optionSelected = function(sceneName) {
+    if (this.scenes[sceneName] != undefined) {
+        this.setActiveScene(this.scenes[sceneName]);
+    } else {
+        alert("Oops! You're not supposed to see this, but we tried to load scene "
+            + sceneName + ", which does not exist. Do you mind telling the developer "
+            + "about this? Thanks!");
+    }
+}
+
 TajsGame.prototype.setConfig = function(config) {
     this.config = config;
 

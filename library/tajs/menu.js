@@ -13,7 +13,22 @@ Menu.prototype.loadScene = function (scene) {
     }
 
     html += scene.description;
+
+    html += '<ul class="optionList">';
+    for (var i in scene.options) {
+        var option = scene.options[i];
+        html += '<li class="option" data-proceed="'
+            + option.proceed + '">' + option.text;
+    }
+    html += '</ul>';
+
     $('#sceneDescription').html(html);
+
+    // Add event listener for click on options
+    $('.option').on('click', function (e) {
+        var name = $(this).data('proceed');
+        _game.optionSelected(name);
+    });
 };
 
 $(document).ready(function() {

@@ -11,4 +11,5 @@ var Scene = function(data) {
     this.image = getDefault("image");
     this.description = getDefault("description");
     this.altText = getDefault("alt_text");
+    this.options = getDefault("options");
 };
