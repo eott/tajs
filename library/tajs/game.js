@@ -33,6 +33,8 @@ TajsGame.prototype.setActiveScene = function(scene) {
 TajsGame.prototype.optionSelected = function(sceneName) {
     if (this.scenes[sceneName] == undefined) {
         this.fetchScene(sceneName, true);
+    } else {
+        this.setActiveScene(this.scenes[sceneName]);
     }
 }
 
