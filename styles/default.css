@@ -58,6 +58,27 @@ body {
     width: auto;
 }
 
+.optionList {
+    list-style: none;
+    padding-left: 1em;
+}
+
+.option {
+    cursor: pointer;
+}
+
+.option span {
+    border-radius: 3px;
+}
+
+.option:before {
+    content: '→ ';
+}
+
+.option:hover span {
+    background-color: #E0D4C1;
+}
+
 .credits {
     min-width: 300px;
     max-width: 800px;

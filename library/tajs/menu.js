@@ -18,7 +18,8 @@ Menu.prototype.loadScene = function (scene) {
     for (var i in scene.options) {
         var option = scene.options[i];
         html += '<li class="option" data-proceed="'
-            + option.proceed + '">' + option.text;
+            + option.proceed + '"><span>' + option.text
+            + '</span></li>';
     }
     html += '</ul>';
 
