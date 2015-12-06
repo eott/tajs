@@ -1,7 +1,3 @@
 {
-    "scenes": [
-        "test_scene",
-        "test_scene_jump"
-    ],
     "start_scene": "test_scene"
 }
