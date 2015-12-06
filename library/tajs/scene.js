@@ -1,4 +1,10 @@
+/**
+ * Represents a scene. Wraps around the raw json data from the scene file.
+ *
+ * @param data The JSON data from the scene file
+ */
 var Scene = function(data) {
+    // Internal function used to avoid variables being undefined
     var getDefault = function(name) {
         if (data[name] != undefined) {
             return data[name];

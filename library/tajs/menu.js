@@ -1,10 +1,18 @@
-var Menu = function() {
+/**
+ * Provides functionality to render scenes in the DOM.
+ */
+var Menu = function() {};
 
-};
-
+/**
+ * Loads the given scene and updates the scene display to render the
+ * scene.
+ *
+ * @param Scene scene The scene to display
+ */
 Menu.prototype.loadScene = function (scene) {
     $('#gameView').data('scene_name', scene.name);
 
+    // Add image if given
     var html = "";
     if (scene.image != "") {
         html += '<img class="sceneImage" src="'
@@ -12,8 +20,10 @@ Menu.prototype.loadScene = function (scene) {
             + scene.altText + '"/>';
     }
 
+    // Add description
     html += scene.description;
 
+    // Construct option list
     html += '<ul class="optionList">';
     for (var i in scene.options) {
         var option = scene.options[i];
@@ -23,6 +33,7 @@ Menu.prototype.loadScene = function (scene) {
     }
     html += '</ul>';
 
+    // All done, update the DOM
     $('#sceneDescription').html(html);
 
     // Add event listener for click on options
@@ -32,7 +43,9 @@ Menu.prototype.loadScene = function (scene) {
     });
 };
 
+// Attach necessary event listener
 $(document).ready(function() {
+    // Mute/unmute button
     $('#mute').on('click', function (e) {
         if ($(this).hasClass('unmute')) {
             $(this).removeClass('unmute')
@@ -45,6 +58,7 @@ $(document).ready(function() {
         }
     });
 
+    // Expand/minize the credits
     $('.expand').on('click', function (e) {
         var $elements = $('.creditAttributions');
         if ($elements.hasClass('visible')) {
