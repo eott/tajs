@@ -1,3 +1,10 @@
 {
-    "start_scene": "intro"
+    "start_scene": "intro",
+    "default_color_scheme": {
+        "b_light": "rgb(248, 241, 215)",
+        "b_medium": "#FFEFC2",
+        "b_dark": "#E0D4C1",
+        "f_normal": "#000000",
+        "f_emph": "rgb(247, 247, 247)"
+    }
 }
