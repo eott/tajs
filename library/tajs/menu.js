@@ -54,6 +54,7 @@ Menu.prototype.loadScene = function (scene) {
     $('html').css('color', color['f_normal']);
     $('#gameView').css('background-color', color['b_medium']);
     $('#gameView').css('box-shadow', '4px 4px 5px 3px ' + color['b_dark']);
+    $('.option:hover span').css('background-color', color['b_dark']);
 };
 
 // Attach necessary event listener
