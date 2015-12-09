@@ -41,6 +41,19 @@ Menu.prototype.loadScene = function (scene) {
         var name = $(this).data('proceed');
         _game.optionSelected(name);
     });
+
+    // Change color scheme if one was given, else change back to default
+    var color;
+    if (scene.colorScheme) {
+        color = scene.colorScheme;
+    } else {
+        color = _game.config['default_color_scheme'];
+    }
+
+    $('html').css('background-color', color['b_light']);
+    $('html').css('color', color['f_normal']);
+    $('#gameView').css('background-color', color['b_medium']);
+    $('#gameView').css('box-shadow', '4px 4px 5px 3px ' + color['b_dark']);
 };
 
 // Attach necessary event listener

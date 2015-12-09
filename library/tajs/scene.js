@@ -9,7 +9,11 @@ var Scene = function(data) {
         if (data[name] != undefined) {
             return data[name];
         } else {
-            return "";
+            switch (name) {
+                case 'option': return [];
+                case 'color_scheme': return false;
+                default: return "";
+            }
         }
     };
 
@@ -18,4 +22,5 @@ var Scene = function(data) {
     this.description = getDefault("description");
     this.altText = getDefault("alt_text");
     this.options = getDefault("options");
+    this.colorScheme = getDefault("color_scheme");
 };
