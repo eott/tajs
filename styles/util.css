@@ -1,0 +1,26 @@
+html {
+    background-color: #d9e9d0;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+form {
+    padding: 20px;
+    width: 700px;
+}
+
+textarea[name="description"],
+textarea[name="output"] {
+    width: 100%;
+    height: 220px;
+}
+
+input[name="sceneName"],
+input[name="optionText"],
+input[name="optionProceed"] {
+    width: 75%;
+}
+
+select[name="options"] {
+    width: 100%;
+}
