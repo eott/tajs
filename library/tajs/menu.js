@@ -43,12 +43,13 @@ Menu.prototype.loadScene = function (scene) {
     });
 
     // Change color scheme if one was given, else change back to default
-    var color;
+    var schemeName;
     if (scene.colorScheme) {
-        color = scene.colorScheme;
+        schemeName = scene.colorScheme;
     } else {
-        color = _game.config['default_color_scheme'];
+        schemeName = _game.config['default_color_scheme'];
     }
+    var color = _game.config['color_schemes'][schemeName];
 
     $('html').css('background-color', color['b_light']);
     $('html').css('color', color['f_normal']);

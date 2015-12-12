@@ -1,10 +1,20 @@
 {
     "start_scene": "intro",
-    "default_color_scheme": {
-        "b_light": "#F8F1D7",
-        "b_medium": "#FFEFC2",
-        "b_dark": "#E0D4C1",
-        "f_normal": "#000000",
-        "f_emph": "#F7F7F7"
+    "default_color_scheme": "beige",
+    "color_schemes": {
+        "beige": {
+            "b_light": "#F8F1D7",
+            "b_medium": "#FFEFC2",
+            "b_dark": "#E0D4C1",
+            "f_normal": "#000000",
+            "f_emph": "#F7F7F7"
+        },
+        "bloody": {
+            "b_light": "#860000",
+            "b_medium": "#620000",
+            "b_dark": "#480000",
+            "f_normal": "#FF7373",
+            "f_emph": "#ff0000"
+        }
     }
 }

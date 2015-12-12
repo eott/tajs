@@ -3,11 +3,5 @@
     "description": "You open the door with all the blood and look into the church's main hall. Everywhere there's blood. Even the blood is covered in blood. It stinks like blood and looks like blood and you didn't know humans even had that much blood.<br><br>In the smack middle of it stands a huge, horned demon chewing on some body part or another. The demon turns around to face you and you realise it's the Demon of Unfinished Stories. There is no escape, you simply cease to exist when he looks at you.<br><br>THE END?",
     "options": [
     ],
-    "color_scheme": {
-        "b_light": "#860000",
-        "b_medium": "#620000",
-        "b_dark": "#480000",
-        "f_normal": "#FF7373",
-        "f_emph": "#ff0000"
-    }
+    "color_scheme": "bloody"
 }
