@@ -13,6 +13,17 @@
             "proceed": "test_scene/test_scene_jump"
         },
         {
+            "text": "Think about some random stuff",
+            "proceed": "test_scene/test_scene_think",
+            "effects": [
+                {
+                    "action": "set",
+                    "flag": "thoughtOfTrueName",
+                    "val": true
+                }
+            ]
+        },
+        {
             "text": "Climb inside and use the stairs",
             "proceed": "test_scene/test_scene_stairs"
         }

@@ -1,0 +1,14 @@
+{
+    "name": "Test Scene Think",
+    "description": "You muse about some random stuff and end up thinking that cookies would be the absolute best choice for breakfast right now.",
+    "options": [
+        {
+            "text": "Do nothing and continue enjoying the view",
+            "proceed": "test_scene/test_scene_stay"
+        },
+        {
+            "text": "Climb inside and use the stairs",
+            "proceed": "test_scene/test_scene_stairs"
+        }
+    ]
+}
