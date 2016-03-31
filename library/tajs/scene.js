@@ -24,3 +24,31 @@ var Scene = function(data) {
     this.options = getDefault("options");
     this.colorScheme = getDefault("color_scheme");
 };
+
+/**
+ * Represents an option to a scene. Contains the text displayed for that option,
+ * which scene is loaded if the option is selected and the conditions and
+ * effects of that option (e.g. setting flags).
+ *
+ * @param data The JSON data from the scene file for that option
+ */
+var Option = function(data) {
+    // Internal function used to avoid variables being undefined
+    var getDefault = function(name) {
+        if (data[name] != undefined) {
+            return data[name];
+        } else {
+            switch (name) {
+                case 'conditions':
+                case 'effects':
+                    return [];
+                default: return "";
+            }
+        }
+    };
+
+    this.proceed = getDefault("proceed");
+    this.text = getDefault("text");
+    this.conditions = getDefault("conditions");
+    this.effects = getDefault("effects");
+}
