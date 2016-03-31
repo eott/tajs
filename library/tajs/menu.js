@@ -27,9 +27,11 @@ Menu.prototype.loadScene = function (scene) {
     html += '<ul class="optionList">';
     for (var i in scene.options) {
         var option = scene.options[i];
-        html += '<li class="option" data-proceed="'
-            + option.proceed + '"><span>' + option.text
-            + '</span></li>';
+        if (option.optionApplies()) {
+            html += '<li class="option" data-proceed="'
+                + option.proceed + '"><span>' + option.text
+                + '</span></li>';
+        }
     }
     html += '</ul>';
 
