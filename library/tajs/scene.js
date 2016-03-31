@@ -97,3 +97,34 @@ Option.prototype.optionApplies = function() {
 
     return applies;
 };
+
+/**
+ * Applies the effect of an option to the game flags. E.g. an option might
+ * set or increment a flag so another scene might check against the value
+ * and offer different options.
+ *
+ * Supported effect actions: set, add, sub
+ */
+Option.prototype.applyEffects = function() {
+    for (var i = 0; i < this.effects.length; i++) {
+        var effect = this.effects[i];
+
+        if (_game.flags[effect.flag] == undefined) {
+            _game.flags[effect.flag] = 0;
+        }
+
+        switch (effect.action.toLowerCase()) {
+            case 'set':
+                _game.flags[effect.flag] = effect.val;
+                break;
+            case 'add':
+                _game.flags[effect.flag] += effect.val;
+                break;
+            case 'sub':
+                _game.flags[effect.flag] -= effect.val;
+                break;
+            default:
+                // Unknown action? Just do nothing
+        }
+    }
+};
