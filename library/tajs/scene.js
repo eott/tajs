@@ -10,7 +10,7 @@ var Scene = function(data) {
             return data[name];
         } else {
             switch (name) {
-                case 'option': return [];
+                case 'options': return [];
                 case 'color_scheme': return false;
                 default: return "";
             }
