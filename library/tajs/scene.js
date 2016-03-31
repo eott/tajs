@@ -56,4 +56,44 @@ var Option = function(data) {
     this.text = $.getDefault("text", data);
     this.conditions = $.getDefault("conditions", data);
     this.effects = $.getDefault("effects", data);
-}
+};
+
+/**
+ * Checks if the option applies to the current state of the game and returns
+ * if all conditions of the option are met (or there are no conditions).
+ *
+ * @return boolean True if all conditions are met or there are no conditions.
+ *    Returns false otherwise.
+ */
+Option.prototype.optionApplies = function() {
+    var applies = true;
+
+    for (var i = 0; i < this.conditions.length; i++) {
+        var cond = this.conditions.length[i];
+        var isVal = _game.flags[cond.flag];
+
+        switch (cond.operator) {
+            case '>':
+                applies = applies && isVal > cond.val;
+                break;
+            case '>=':
+                applies = applies && isVal >= cond.val;
+                break;
+            case '<':
+                applies = applies && isVal < cond.val;
+                break;
+            case '<=':
+                applies = applies && isVal <= cond.val;
+                break;
+            case '=':
+            case '==':
+                applies = applies && isVal == cond.val;
+                break;
+            default:
+                // Unknown op? Can't be true!
+                applies = false;
+        }
+    }
+
+    return applies;
+};
