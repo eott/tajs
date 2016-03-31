@@ -8,6 +8,7 @@ var TajsGame = function() {
     this.config = {};
     this.menu = new Menu();
     this.scenes = {};
+    this.flags = {};
 };
 
 /**
