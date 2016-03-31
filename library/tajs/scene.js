@@ -35,8 +35,13 @@ var Scene = function(data) {
     this.image = $.getDefault("image", data);
     this.description = $.getDefault("description", data);
     this.altText = $.getDefault("alt_text", data);
-    this.options = $.getDefault("options", data);
     this.colorScheme = $.getDefault("color_scheme", data);
+
+    this.options = [];
+    var optionData = $.getDefault("options", data);
+    for (var i = 0; i < optionData.length; i++) {
+        this.options[i] = new Option(optionData[i]);
+    }
 };
 
 /**
