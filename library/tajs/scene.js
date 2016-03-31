@@ -1,28 +1,42 @@
+$.extend({
+    /**
+     * Returns the value for the given key from the given data. If there is no
+     * entry for the key, returns a default value instead. For most keys this
+     * is an empty string, for certain other keys (used in scene and scene
+     * option construction) other types are returned as default values, such as
+     * empty arrays or booleans.
+     *
+     * @param name The key to look for
+     * @param data The JSON data containing the desired value
+     */
+    getDefault: function(name, data) {
+        if (data[name] != undefined) {
+            return data[name];
+        } else {
+            switch (name) {
+                case 'options':
+                case 'conditions':
+                case 'effects':
+                    return [];
+                case 'color_scheme': return false;
+                default: return "";
+            }
+        }
+    }
+});
+
 /**
  * Represents a scene. Wraps around the raw json data from the scene file.
  *
  * @param data The JSON data from the scene file
  */
 var Scene = function(data) {
-    // Internal function used to avoid variables being undefined
-    var getDefault = function(name) {
-        if (data[name] != undefined) {
-            return data[name];
-        } else {
-            switch (name) {
-                case 'options': return [];
-                case 'color_scheme': return false;
-                default: return "";
-            }
-        }
-    };
-
-    this.name = getDefault("name");
-    this.image = getDefault("image");
-    this.description = getDefault("description");
-    this.altText = getDefault("alt_text");
-    this.options = getDefault("options");
-    this.colorScheme = getDefault("color_scheme");
+    this.name = $.getDefault("name", data);
+    this.image = $.getDefault("image", data);
+    this.description = $.getDefault("description", data);
+    this.altText = $.getDefault("alt_text", data);
+    this.options = $.getDefault("options", data);
+    this.colorScheme = $.getDefault("color_scheme", data);
 };
 
 /**
@@ -33,22 +47,8 @@ var Scene = function(data) {
  * @param data The JSON data from the scene file for that option
  */
 var Option = function(data) {
-    // Internal function used to avoid variables being undefined
-    var getDefault = function(name) {
-        if (data[name] != undefined) {
-            return data[name];
-        } else {
-            switch (name) {
-                case 'conditions':
-                case 'effects':
-                    return [];
-                default: return "";
-            }
-        }
-    };
-
-    this.proceed = getDefault("proceed");
-    this.text = getDefault("text");
-    this.conditions = getDefault("conditions");
-    this.effects = getDefault("effects");
+    this.proceed = $.getDefault("proceed", data);
+    this.text = $.getDefault("text", data);
+    this.conditions = $.getDefault("conditions", data);
+    this.effects = $.getDefault("effects", data);
 }
