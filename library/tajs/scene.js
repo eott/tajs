@@ -69,7 +69,7 @@ Option.prototype.optionApplies = function() {
     var applies = true;
 
     for (var i = 0; i < this.conditions.length; i++) {
-        var cond = this.conditions.length[i];
+        var cond = this.conditions[i];
         var isVal = _game.flags[cond.flag];
 
         switch (cond.operator) {
