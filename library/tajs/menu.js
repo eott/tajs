@@ -29,7 +29,8 @@ Menu.prototype.loadScene = function (scene) {
         var option = scene.options[i];
         if (option.optionApplies()) {
             html += '<li class="option" data-proceed="'
-                + option.proceed + '"><span>' + option.text
+                + option.proceed + '" data-onr="'
+                + i + '"><span>' + option.text
                 + '</span></li>';
         }
     }
@@ -41,7 +42,8 @@ Menu.prototype.loadScene = function (scene) {
     // Add event listener for click on options
     $('.option').on('click', function (e) {
         var name = $(this).data('proceed');
-        _game.optionSelected(name);
+        var nr = $(this).data('onr');
+        _game.optionSelected(name, nr);
     });
 
     // Change color scheme if one was given, else change back to default

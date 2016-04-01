@@ -30,8 +30,16 @@ TajsGame.prototype.setActiveScene = function(scene) {
  * available immediately.
  *
  * @param string sceneName The scene's name, including path
+ * @param int optionNr The number of the selected option within the currently
+ *    active scene.
  */
-TajsGame.prototype.optionSelected = function(sceneName) {
+TajsGame.prototype.optionSelected = function(sceneName, optionNr) {
+    // First, handle the option's effects
+    if (this.activeScene.options[optionNr] != undefined) {
+        this.activeScene.options[optionNr].applyEffects();
+    }
+
+    // Now load the new scene
     if (this.scenes[sceneName] == undefined) {
         this.fetchScene(sceneName, true);
     } else {
