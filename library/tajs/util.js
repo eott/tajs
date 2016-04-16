@@ -15,12 +15,16 @@ $(document).ready(function() {
         // Get values
         var text = $('input[name="optionText"]').val();
         var proceed = $('input[name="optionProceed"]').val();
+        var effect = $('input[name="optionEffect"]').val();
+        var condition = $('input[name="optionCondition"]').val();
 
         // Create option element for scene option
         var element = document.createElement('option');
         $(element).attr('value', proceed);
         $(element).data('text', text);
         $(element).data('proceed', proceed);
+        $(element).data('effect', effect);
+        $(element).data('condition', condition);
         $(element).html(text + ' - ' + proceed);
 
         // Done, append
@@ -48,13 +52,34 @@ $(document).ready(function() {
         var opts = "";
         $('select[name="options"]').children().each(function(i, child) {
             if (opts.length > 0) {
-                opts += ',';
+                opts += ',' + "\n";
             }
-            opts += '{"text":"' + $.prepareText($(child).data('text'))
-                + '","proceed":' + $.prepareText($(child).data('proceed'))
-                + '"}';
+            opts += '{' + "\n"
+                + '            "text":"' + $.prepareText($(child).data('text')) + '",' + "\n"
+                + '            "proceed":' + $.prepareText($(child).data('proceed')) + '"';
+
+
+            var eff = $(child).data('effect');
+            if (eff != '') {
+                eff = eff.split(' ');
+                opts += ",\n"
+                    + '            "effects": [{"action":"' + $.prepareText(eff[0]) + '",'
+                    + '"flag":"' + $.prepareText(eff[1]) + '",'
+                    + '"val":"' + $.prepareText(eff[2]) + '"}]';
+            }
+
+            var cond = $(child).data('condition');
+            if (cond != '') {
+                cond = cond.split(' ');
+                opts += ",\n"
+                    + '            "conditions": [{"flag":"' + $.prepareText(cond[0]) + '",'
+                    + '"operator":"' + $.prepareText(cond[1]) + '",'
+                    + '"val":"' + $.prepareText(cond[2]) + '"}]';
+            }
+
+            opts += "\n" + '        }';
         });
-        opts = opts.replace('/.*,$/gm', '');
+
         template = template.replace('%options%', opts);
 
         $('textarea[name="output"]').val(template);
