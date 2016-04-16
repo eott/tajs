@@ -56,7 +56,7 @@ $(document).ready(function() {
             }
             opts += '{' + "\n"
                 + '            "text":"' + $.prepareText($(child).data('text')) + '",' + "\n"
-                + '            "proceed":' + $.prepareText($(child).data('proceed')) + '"';
+                + '            "proceed":"' + $.prepareText($(child).data('proceed')) + '"';
 
 
             var eff = $(child).data('effect');
