@@ -42,6 +42,13 @@ var Scene = function(data) {
     for (var i = 0; i < optionData.length; i++) {
         this.options[i] = new Option(optionData[i]);
     }
+
+    if (_game.config["debug"]) {
+        this.options[this.options.length] = new Option({
+            "text": "[Debug] Back",
+            "proceed": _game.lastScene.name
+        });
+    }
 };
 
 /**

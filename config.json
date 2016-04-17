@@ -1,6 +1,7 @@
 {
     "start_scene": "intro",
     "default_color_scheme": "beige",
+    "debug": false,
     "color_schemes": {
         "beige": {
             "b_light": "#F8F1D7",

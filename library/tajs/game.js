@@ -5,6 +5,7 @@
  */
 var TajsGame = function() {
     this.activeScene = false;
+    this.lastScene = false;
     this.config = {};
     this.menu = new Menu();
     this.scenes = {};
@@ -38,6 +39,9 @@ TajsGame.prototype.optionSelected = function(sceneName, optionNr) {
     if (this.activeScene.options[optionNr] != undefined) {
         this.activeScene.options[optionNr].applyEffects();
     }
+
+    // Save current scene (we may need this for a back button)
+    this.lastScene = this.activeScene;
 
     // Now load the new scene
     if (this.scenes[sceneName] == undefined) {
