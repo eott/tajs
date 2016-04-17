@@ -118,10 +118,10 @@ Option.prototype.applyEffects = function() {
                 _game.flags[effect.flag] = effect.val;
                 break;
             case 'add':
-                _game.flags[effect.flag] += effect.val;
+                _game.flags[effect.flag] += parseFloat(effect.val);
                 break;
             case 'sub':
-                _game.flags[effect.flag] -= effect.val;
+                _game.flags[effect.flag] -= parseFloat(effect.val);
                 break;
             default:
                 // Unknown action? Just do nothing
