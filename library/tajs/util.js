@@ -2,7 +2,7 @@ $.extend({
     prepareText: function(txt) {
         return ('' + txt).replace('\r', '')
             .replace(/[\r\n]/g, '<br/>')
-            .replace('"','\\"');
+            .replace(/"/g, '\\"');
     }
 });
 
